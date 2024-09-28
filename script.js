@@ -187,6 +187,32 @@ let currentRecipeKey = "";
 let countdownTime;
 let countdownInterval;
 
+document.addEventListener("DOMContentLoaded", function() {
+    const recipeCards = document.querySelectorAll('.recipe-grid .recipe-card');
+  
+    const observerOptions = {
+      root: null, // Use the viewport
+      rootMargin: '0px',
+      threshold: 0.1 // Trigger when 10% of the card is visible
+    };
+  
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const index = Array.from(recipeCards).indexOf(entry.target);
+          entry.target.style.transitionDelay = `${index * 0.1}s`; // Add staggered delay
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target); // Stop observing after it becomes visible
+        }
+      });
+    }, observerOptions);
+  
+    recipeCards.forEach(card => {
+      observer.observe(card);
+    });
+  });
+
+  
 function openPopup(recipeKey) {
   const recipe = recipes[recipeKey];
   currentRecipeKey = recipeKey;

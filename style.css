@@ -40,9 +40,16 @@ h1 {
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   overflow: hidden;
-  transition: transform 0.3s;
-}
+  /* transition: transform 0.3s; */
+  opacity: 0; /* Start as invisible */
+  transform: translateY(20px); /* Move down slightly */
+  transition: opacity 0.5s ease, transform 0.5s ease; /* Animation duration */
 
+}
+.recipe-card.visible {
+  opacity: 1; /* Fade in */
+  transform: translateY(0); /* Move to original position */
+}
 .recipe-card:hover {
   transform: translateY(-5px);
 }
