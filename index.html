@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Recipe Card</title>
+    <!-- css -->
+    <link rel="stylesheet" href="style.css" />
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Calligraffitti&family=Fredoka:wght@300..700&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap&family=Lilita+One&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <h1>Recipe Card</h1>
+    <section class="recipe-grid">
+      <div class="recipe-card">
+        <div class="cards">
+          <div class="card-content">
+            <h2 class="recipe-title">Chocolate Cake</h2>
+            <img
+              src="img/Chocolate_Cake.png"
+              title="Chocolate Cake"
+              loading="lazy"
+              class="recipe-img"
+            />
+            <p class="preparation-time">
+              Preparation time: <span class="prep-time">30</span> minutes
+            </p>
+            <p class="serving-size">Serving size: <span>8</span> servings</p>
+
+            <button class="card-btn" onclick="openPopup('chocolateCake')">
+              View more
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="recipe-card">
+        <div class="cards">
+          <div class="card-content">
+            <h2 class="recipe-title">Vanilla Cupcakes</h2>
+            <img
+              src="img/Vanilla_Cupcakes.png"
+              title="Vanilla Cupcakes"
+              loading="lazy"
+              class="recipe-img"
+            />
+            <p class="preparation-time">
+              Preparation time: <span class="prep-time">25</span> minutes
+            </p>
+            <p class="serving-size">Serving size: <span>12</span> servings</p>
+            <button class="card-btn" onclick="openPopup('vanillaCupcakes')">
+              View more
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="recipe-card">
+        <div class="cards">
+          <div class="card-content">
+            <h2 class="recipe-title">Spaghetti Bolognese</h2>
+            <img
+              src="img/Spaghetti_Bolognese.png"
+              title="Spaghetti Bolognese"
+              loading="lazy"
+              class="recipe-img"
+            />
+            <p class="preparation-time">
+              Preparation time: <span class="prep-time">40</span> minutes
+            </p>
+            <p class="serving-size">Serving size: <span>4</span> servings</p>
+            <button class="card-btn" onclick="openPopup('spaghettiBolognese')">
+              View more
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="recipe-card">
+        <div class="cards">
+          <div class="card-content">
+            <h2 class="recipe-title">Chicken Curry</h2>
+            <img
+              src="img/Chicken_Curry.png"
+              title="Chicken Curry"
+              loading="lazy"
+              class="recipe-img"
+            />
+            <p class="preparation-time">
+              Preparation time: <span class="prep-time">35</span> minutes
+            </p>
+            <p class="serving-size">Serving size: <span>4</span> servings</p>
+            <button class="card-btn" onclick="openPopup('chickenCurry')">
+              View more
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="recipe-card">
+        <div class="cards">
+          <div class="card-content">
+            <h2 class="recipe-title">Caesar Salad</h2>
+            <img
+              src="img/Caesar_Salad.png"
+              title="Caesar Salad"
+              loading="lazy"
+              class="recipe-img"
+            />
+            <p class="preparation-time">
+              Preparation time: <span class="prep-time">15</span> minutes
+            </p>
+            <p class="serving-size">Serving size: <span>4</span> servings</p>
+            <button class="card-btn" onclick="openPopup('caesarSalad')">
+              View more
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="recipe-card">
+        <div class="cards">
+          <div class="card-content">
+            <h2 class="recipe-title">Pancakes</h2>
+            <img
+              src="img/Pancakes.png"
+              title="Pancakes"
+              loading="lazy"
+              class="recipe-img"
+            />
+            <p class="preparation-time">
+              Preparation time: <span class="prep-time">20</span> minutes
+            </p>
+            <p class="serving-size">Serving size: <span>4</span> servings</p>
+            <button class="card-btn" onclick="openPopup('pancakes')">
+              View more
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="recipe-card">
+        <div class="cards">
+          <div class="card-content">
+            <h2 class="recipe-title">Beef Tacos</h2>
+            <img
+              src="img/Beef_Tacos.png"
+              title="Beef Tacos"
+              loading="lazy"
+              class="recipe-img"
+            />
+            <p class="preparation-time">
+              Preparation time: <span class="prep-time">30</span> minutes
+            </p>
+            <p class="serving-size">Serving size: <span>4</span> servings</p>
+            <button class="card-btn" onclick="openPopup('beefTacos')">
+              View more
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="recipe-card">
+        <div class="cards">
+          <div class="card-content">
+            <h2 class="recipe-title">Vegetable Stir-Fry</h2>
+            <img
+              src="img/Vegetable_Stir_Fry.png"
+              title="Vegetable Stir-Fry"
+              loading="lazy"
+              class="recipe-img"
+            />
+            <p class="preparation-time">
+              Preparation time: <span class="prep-time">25</span> minutes
+            </p>
+            <p class="serving-size">Serving size: <span>4</span> servings</p>
+            <button class="card-btn" onclick="openPopup('vegetableStirFry')">
+              View more
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Single Popup Structure for All Cards -->
+      <div class="popup-bg" id="popupBg">
+        <div class="popup" id="recipePopup">
+          <span class="close" onclick="closePopup()">&times;</span>
+          <div class="popup-content">
+            <div class="timer" id="countdownTimer"></div>
+            <h3 id="recipeTitle"></h3>
+            <p id="recipeDescription" class="recipe-description"></p>
+            <h4>Ingredients:</h4>
+            <ul id="ingredientsList" class="ingredients-list"></ul>
+            <h4>Cooking Steps:</h4>
+            <ul id="cookingStepsList" class="cooking-steps"></ul>
+            <button class="start-cooking-btn" onclick="startCooking()">
+              Start Cooking
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- js -->
+    <script src="script.js"></script>
+  </body>
+</html>

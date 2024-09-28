@@ -1,0 +1,333 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Arial", sans-serif;
+  background-color: #f5f5f5;
+  padding: 20px;
+  color: #333333;
+}
+
+.no-scroll {
+  overflow: hidden;
+}
+
+h1 {
+  justify-content: center;
+  text-align: center;
+  margin: 10px;
+  padding: 0px 0px 10px 0px;
+  font-family: "Calligraffitti", cursive;
+  font-weight: 400;
+  font-size: 48px;
+}
+
+.recipe-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.recipe-card {
+  background-color: #fff8e1;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s;
+}
+
+.recipe-card:hover {
+  transform: translateY(-5px);
+}
+
+.cards {
+  padding: 20px;
+}
+
+.card-content {
+  text-align: center;
+}
+
+.recipe-title {
+  font-family: "Lilita One", sans-serif;
+  font-weight: 400;
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.recipe-img {
+  width: 225px;
+  height: 225px;
+  max-width: 100%;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  object-fit: cover;
+}
+
+.preparation-time,
+.serving-size {
+  text-align: center;
+  font-family: "Poppins", system-ui;
+  font-weight: 400;
+  font-size: 14px;
+  color: #333333;
+  margin-bottom: 15px;
+  padding: 10px;
+  display: inline-block;
+  width: 90%;
+}
+
+.card-btn,
+.start-cooking-btn {
+  width: 150px;
+  height: 50px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  background-color: #007bff;
+  color: #ffffff;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.card-btn a,
+.start-cooking-btn a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.card-btn:hover,
+.start-cooking-btn:hover {
+  background-color: #0056b3;
+}
+
+/* @media (max-width: 768px) {
+  .recipe-title {
+    font-size: 22px;
+  }
+
+  .preparation-time,
+  .serving-size {
+    font-size: 13px;
+  }
+
+  .card-btn,
+  .start-cooking-btn {
+    padding: 10px 15px;
+  }
+}
+
+@media (max-width: 500px) {
+  .recipe-title {
+    font-size: 20px;
+  }
+
+  .preparation-time,
+  .serving-size {
+    font-size: 12px;
+    padding: 8px;
+  }
+
+  .card-btn,
+  .start-cooking-btn {
+    padding: 8px 10px;
+    font-size: 14px;
+  }
+} */
+
+/* Popup */
+#popupBg {
+  display: none;
+}
+
+.popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #f4f4f9;
+  width: 70%;
+  height: 70%;
+  z-index: 150;
+  overflow: auto;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: opacity 0.3s;
+}
+.popup::-webkit-scrollbar {
+  display: none;
+}
+.popup-content {
+  position: relative;
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.ingredients-list,
+.cooking-steps {
+  list-style-type: none;
+  margin: 10px;
+}
+
+.ingredients-list li,
+.cooking-steps li {
+  font-family: open;
+  padding: 5px 10px;
+  margin: 5px;
+  font-size: 16px;
+  background-color: #ecf0f1;
+  border-radius: 4px;
+  border: 2px solid transparent;
+  transition: all 0.3s ease-in-out;
+}
+
+.ingredients-list li:hover,
+.cooking-steps li:hover {
+  background-color: #dcdde1;
+  border: 2px solid #007bff;
+}
+
+.timer {
+  font-family: "Poppins", sans-serif;
+  font-size: 18px;
+  font-weight: bold;
+  color: #007bff;
+  background-color: #ffffff;
+  padding: 10px 15px;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  display: inline-block;
+  text-align: center;
+  margin: 10px 0;
+  visibility: hidden;
+}
+
+h3,
+h4 {
+  font-family: "Lilita One", sans-serif;
+  font-weight: 400;
+}
+
+.recipe-description {
+  font-family: open;
+  padding: 5px 10px;
+  margin: 2px;
+}
+
+.close {
+  position: fixed;
+  font-size: 24px;
+  cursor: pointer;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  opacity: 0.5;
+  z-index: 10;
+}
+
+.close:hover {
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+@media (max-width: 768px) and (min-width: 501px) {
+  .recipe-title {
+    font-size: 22px;
+  }
+
+  .preparation-time,
+  .serving-size {
+    font-size: 13px;
+  }
+
+  .card-btn,
+  .start-cooking-btn {
+    padding: 10px 15px;
+  }
+}
+
+@media (max-width: 500px) and (min-width: 401px) {
+  .recipe-title {
+    font-size: 20px;
+  }
+
+  .preparation-time,
+  .serving-size {
+    font-size: 12px;
+    padding: 8px;
+  }
+
+  .card-btn,
+  .start-cooking-btn {
+    padding: 8px 10px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 600px) and (min-width: 301px) {
+  .popup {
+    width: 95%;
+    height: 85%;
+    padding: 15px;
+  }
+
+  .close {
+    font-size: 20px;
+    top: 5px;
+    right: 10px;
+  }
+
+  h3,
+  h4 {
+    font-size: 18px;
+  }
+
+  .ingredients-list li,
+  .cooking-steps li {
+    font-size: 14px;
+  }
+
+  .timer {
+    font-size: 14px;
+  }
+
+  .start-cooking-btn {
+    padding: 8px 10px;
+    font-size: 14px;
+  }
+
+  .card-btn,
+  .start-cooking-btn {
+    width: 80%;
+    height: 40px;
+  }
+
+  .close {
+    opacity: 1;
+  }
+
+  .timer {
+    font-size: 20px;
+    padding: 10px 15px;
+  }
+}
