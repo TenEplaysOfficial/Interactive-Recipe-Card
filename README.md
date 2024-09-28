@@ -43,6 +43,7 @@ Click on any recipe card to view its details. Start cooking by clicking the "Sta
 ## License
 This project is licensed under the MIT License.
 
+![Screenshot 1](<img/Screenshot.png>)
 
 
 *Stay connected! Follow me on [Socials](https://linktr.ee/tenegames).*
